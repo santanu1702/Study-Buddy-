@@ -1,6 +1,8 @@
 # ============================================================
 #         StudyBuddyV3BOT — Python Dependencies
 #         Install with: pip install -r requirements.txt
+#         ✅ Fixed for Render.com deployment
+#         ✅ All packages have pre-built wheels (no Rust/Cargo)
 # ============================================================
 
 # ------------------------------------------------------------
@@ -11,7 +13,6 @@ python-telegram-bot[job-queue]==21.6
 # ------------------------------------------------------------
 # 🗄️ DATABASE — MongoDB Async Driver
 # ------------------------------------------------------------
-# ✅ FIXED: motor 3.6.0 requires pymongo>=4.9,<4.10
 motor==3.6.0
 pymongo==4.9.2
 dnspython==2.7.0
@@ -28,16 +29,19 @@ deep-translator==1.11.4
 
 # ------------------------------------------------------------
 # ⚙️ CONFIGURATION
+# ✅ FIXED: Downgraded pydantic to 1.x — no Rust compilation
+# pydantic v2 requires pydantic-core which needs Rust
+# pydantic v1 has pure Python wheels
 # ------------------------------------------------------------
 python-dotenv==1.0.1
-pydantic==2.10.3
-pydantic-settings==2.6.1
+pydantic==1.10.21
+pydantic-settings==0.2.5
 
 # ------------------------------------------------------------
 # 🌐 HTTP & NETWORKING
 # ------------------------------------------------------------
-aiohttp==3.11.10
-httpx==0.28.1
+aiohttp==3.9.5
+httpx==0.27.2
 
 # ------------------------------------------------------------
 # 🧮 MATH & EXPRESSION EVALUATION
@@ -56,13 +60,6 @@ pytz==2024.2
 colorlog==6.9.0
 
 # ------------------------------------------------------------
-# 🔐 SECURITY & VALIDATION
-# ✅ FIXED: Removed cryptography — caused Rust/Cargo build error
-# Using pyOpenSSL instead which has pre-built wheels
-# ------------------------------------------------------------
-pyOpenSSL==24.2.1
-
-# ------------------------------------------------------------
 # 🛠️ UTILITIES
 # ------------------------------------------------------------
 cachetools==5.5.0
@@ -71,10 +68,9 @@ humanize==4.11.0
 
 # ------------------------------------------------------------
 # 🚀 PERFORMANCE
-# ✅ FIXED: uvloop only works on Linux/macOS
-# Render uses Linux so it's fine, but pinned to stable version
+# ✅ Only on Linux — Render uses Linux so this works
 # ------------------------------------------------------------
-uvloop==0.21.0
+uvloop==0.19.0
 
 # ------------------------------------------------------------
 # 📊 OPTIONAL — Analytics & Stats
