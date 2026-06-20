@@ -57,8 +57,10 @@ colorlog==6.9.0
 
 # ------------------------------------------------------------
 # 🔐 SECURITY & VALIDATION
+# ✅ FIXED: Removed cryptography — caused Rust/Cargo build error
+# Using pyOpenSSL instead which has pre-built wheels
 # ------------------------------------------------------------
-cryptography==44.0.0
+pyOpenSSL==24.2.1
 
 # ------------------------------------------------------------
 # 🛠️ UTILITIES
@@ -69,6 +71,8 @@ humanize==4.11.0
 
 # ------------------------------------------------------------
 # 🚀 PERFORMANCE
+# ✅ FIXED: uvloop only works on Linux/macOS
+# Render uses Linux so it's fine, but pinned to stable version
 # ------------------------------------------------------------
 uvloop==0.21.0
 
