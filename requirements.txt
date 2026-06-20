@@ -1,8 +1,7 @@
 # ============================================================
 #         StudyBuddyV3BOT — Python Dependencies
-#         Install with: pip install -r requirements.txt
-#         ✅ Fixed for Render.com deployment
-#         ✅ All packages have pre-built wheels (no Rust/Cargo)
+#         ✅ Fully compatible with Python 3.11
+#         ✅ All pre-built wheels — zero Rust/C compilation
 # ============================================================
 
 # ------------------------------------------------------------
@@ -29,13 +28,10 @@ deep-translator==1.11.4
 
 # ------------------------------------------------------------
 # ⚙️ CONFIGURATION
-# ✅ FIXED: Downgraded pydantic to 1.x — no Rust compilation
-# pydantic v2 requires pydantic-core which needs Rust
-# pydantic v1 has pure Python wheels
+# ✅ Pydantic v1 — pure Python, no Rust compilation
 # ------------------------------------------------------------
 python-dotenv==1.0.1
 pydantic==1.10.21
-pydantic-settings==0.2.5
 
 # ------------------------------------------------------------
 # 🌐 HTTP & NETWORKING
@@ -55,7 +51,7 @@ python-dateutil==2.9.0.post0
 pytz==2024.2
 
 # ------------------------------------------------------------
-# 📝 LOGGING & MONITORING
+# 📝 LOGGING
 # ------------------------------------------------------------
 colorlog==6.9.0
 
@@ -68,11 +64,10 @@ humanize==4.11.0
 
 # ------------------------------------------------------------
 # 🚀 PERFORMANCE
-# ✅ Only on Linux — Render uses Linux so this works
 # ------------------------------------------------------------
 uvloop==0.19.0
 
 # ------------------------------------------------------------
-# 📊 OPTIONAL — Analytics & Stats
+# 📊 STATS
 # ------------------------------------------------------------
 tabulate==0.9.0
