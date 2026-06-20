@@ -1,7 +1,8 @@
 # ============================================================
 #         StudyBuddyV3BOT — Python Dependencies
-#         ✅ Fully compatible with Python 3.11
-#         ✅ All pre-built wheels — zero Rust/C compilation
+#         ✅ Python 3.11 compatible
+#         ✅ Zero compilation — all pure Python or pre-built
+#         ✅ Tested for Render.com deployment
 # ============================================================
 
 # ------------------------------------------------------------
@@ -28,7 +29,7 @@ deep-translator==1.11.4
 
 # ------------------------------------------------------------
 # ⚙️ CONFIGURATION
-# ✅ Pydantic v1 — pure Python, no Rust compilation
+# ✅ Pydantic v1 — pure Python, zero Rust
 # ------------------------------------------------------------
 python-dotenv==1.0.1
 pydantic==1.10.21
@@ -63,11 +64,12 @@ tenacity==9.0.0
 humanize==4.11.0
 
 # ------------------------------------------------------------
-# 🚀 PERFORMANCE
-# ------------------------------------------------------------
-uvloop==0.19.0
-
-# ------------------------------------------------------------
 # 📊 STATS
 # ------------------------------------------------------------
 tabulate==0.9.0
+
+# ❌ REMOVED — causes build failures on Render:
+# uvloop        → requires C compilation, fails on Python 3.14
+# cryptography  → requires Rust/Cargo
+# pydantic-settings → requires pydantic v2 + Rust
+# pyOpenSSL     → depends on cryptography
